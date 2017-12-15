@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
@@ -18,10 +19,12 @@ public class SCOUTZ {
     public SCOUTZMotor rightBackDrive;
     public SCOUTZMotor intakeL;
     public SCOUTZMotor intakeR;
+    public SCOUTZMotor winch;
 
     public SCOUTZDrivetrain drivetrain;
     public SCOUTZElevator elevator;
 
+    public SCOUTZGyro gyro;
 
     public SCOUTZ(HardwareMap hardwareMap){
         SCOUTZMap hardware = new SCOUTZMap();
@@ -33,9 +36,11 @@ public class SCOUTZ {
         leftBackDrive = new SCOUTZMotor(hardware.leftBackDrive, MotorType.RevHDHex);
         intakeL = new SCOUTZMotor(hardware.intakeL, MotorType.NeveRest);
         intakeR = new SCOUTZMotor(hardware.intakeR, MotorType.NeveRest);
+        winch = new SCOUTZMotor(hardware.winch, MotorType.NeveRest);
+        gyro = new SCOUTZGyro(hardware.gyro);
 
-        drivetrain = new SCOUTZDrivetrain(leftFrontDrive, leftBackDrive, rightFrontDrive, rightBackDrive);
-        elevator = new SCOUTZElevator(intakeL, intakeR);
+        drivetrain = new SCOUTZDrivetrain(leftFrontDrive, leftBackDrive, rightFrontDrive, rightBackDrive, gyro);
+        elevator = new SCOUTZElevator(intakeL, intakeR, winch);
 
     }
 

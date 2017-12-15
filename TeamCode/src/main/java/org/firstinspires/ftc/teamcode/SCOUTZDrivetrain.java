@@ -12,11 +12,15 @@ public class SCOUTZDrivetrain {
     public SCOUTZMotor rightFrontDrive;
     public SCOUTZMotor rightBackDrive;
 
-    public SCOUTZDrivetrain(SCOUTZMotor leftFrontDrive, SCOUTZMotor leftBackDrive, SCOUTZMotor rightBackDrive, SCOUTZMotor rightFrontDrive) {
+    public SCOUTZGyro gyro;
+
+    public SCOUTZDrivetrain(SCOUTZMotor leftFrontDrive, SCOUTZMotor leftBackDrive, SCOUTZMotor rightBackDrive, SCOUTZMotor rightFrontDrive, SCOUTZGyro gyro) {
         this.rightFrontDrive = rightFrontDrive;
         this.rightBackDrive = rightBackDrive;
         this.leftFrontDrive = leftFrontDrive;
         this.leftBackDrive = leftBackDrive;
+
+        this.gyro = gyro;
     }
 
     public void drive(float gamepad1LeftX, float gamepad1LeftY, float gamepad1RightX ) {

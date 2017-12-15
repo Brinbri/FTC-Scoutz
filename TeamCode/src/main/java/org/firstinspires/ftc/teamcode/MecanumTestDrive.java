@@ -66,12 +66,25 @@ public class MecanumTestDrive extends OpMode
         robot.drivetrain.drive(gamepad1LeftY, gamepad1LeftX,gamepad1RightX);
 
 
-        if(gamepad2.a){
-            robot.elevator.runIntake(.75);
+        if(gamepad2.b){
+            robot.elevator.runIntake(10);
+        }
+        else{
+            robot.elevator.runIntake(0);
         }
 
-        if (gamepad2.b){
-            robot.elevator.runIntake(-.75);
+        if (gamepad2.a){
+            robot.elevator.runIntake(-10);
+        }
+        else{
+            robot.elevator.runIntake(0);
+        }
+
+        if(gamepad2.right_bumper){
+            robot.elevator.runWinch(5);
+        }
+        else{
+            robot.elevator.runWinch(-5);
         }
     }
 
