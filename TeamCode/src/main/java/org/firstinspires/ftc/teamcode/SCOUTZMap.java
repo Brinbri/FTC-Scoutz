@@ -13,7 +13,8 @@ public class SCOUTZMap {
     DcMotor leftBackDrive;
     DcMotor rightFrontDrive;
     DcMotor rightBackDrive;
-    DcMotor intake;
+    DcMotor intakeL;
+    DcMotor intakeR;
 
     HardwareMap hMap;
 
@@ -28,7 +29,8 @@ public class SCOUTZMap {
         leftBackDrive = hMap.get(DcMotor.class, "leftB");
         rightFrontDrive = hMap.get(DcMotor.class, "rightF");
         rightBackDrive = hMap.get(DcMotor.class, "rightB");
-        intake = hMap.get(DcMotor.class, "intake");
+        intakeL = hMap.get(DcMotor.class, "intakeL");
+        intakeR = hMap.get(DcMotor.class, "intakeR");
 
     }
 }

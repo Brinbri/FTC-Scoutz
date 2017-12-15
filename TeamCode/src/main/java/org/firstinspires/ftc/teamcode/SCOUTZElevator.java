@@ -5,18 +5,22 @@ package org.firstinspires.ftc.teamcode;
  */
 
 public class SCOUTZElevator {
-    public SCOUTZMotor intake;
+    public SCOUTZMotor intakeL;
+    public SCOUTZMotor intakeR;
 
 
-    public SCOUTZElevator( SCOUTZMotor intake){
-        this.intake = intake;
+    public SCOUTZElevator( SCOUTZMotor intakeL, SCOUTZMotor intakeR){
+        this.intakeL = intakeL;
+        this.intakeR = intakeR;
     }
 
     public void runIntake(double pow){
-        intake.setPower(pow);
+        intakeL.setPower(pow);
+        intakeR.setPower(pow);
     }
 
     public void runIntakeReverse(double pow){
-        intake.setPower(pow);
+        intakeL.setPower(pow);
+        intakeR.setPower(pow);
     }
 }

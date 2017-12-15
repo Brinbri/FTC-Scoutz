@@ -16,7 +16,8 @@ public class SCOUTZ {
     public SCOUTZMotor leftBackDrive;
     public SCOUTZMotor rightFrontDrive;
     public SCOUTZMotor rightBackDrive;
-    public SCOUTZMotor intake;
+    public SCOUTZMotor intakeL;
+    public SCOUTZMotor intakeR;
 
     public SCOUTZDrivetrain drivetrain;
     public SCOUTZElevator elevator;
@@ -30,10 +31,11 @@ public class SCOUTZ {
         rightBackDrive = new SCOUTZMotor(hardware.rightBackDrive, MotorType.RevHDHex);
         leftFrontDrive = new SCOUTZMotor(hardware.leftFrontDrive, MotorType.RevHDHex);
         leftBackDrive = new SCOUTZMotor(hardware.leftBackDrive, MotorType.RevHDHex);
-        intake = new SCOUTZMotor(hardware.intake, MotorType.NeveRest);
+        intakeL = new SCOUTZMotor(hardware.intakeL, MotorType.NeveRest);
+        intakeR = new SCOUTZMotor(hardware.intakeR, MotorType.NeveRest);
 
         drivetrain = new SCOUTZDrivetrain(leftFrontDrive, leftBackDrive, rightFrontDrive, rightBackDrive);
-        elevator = new SCOUTZElevator(intake);
+        elevator = new SCOUTZElevator(intakeL, intakeR);
 
     }
 
