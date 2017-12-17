@@ -35,7 +35,7 @@ public class SCOUTZMap {
         rightBackDrive = hMap.get(DcMotor.class, "rightB");
         intakeL = hMap.get(DcMotor.class, "intakeL");
         intakeR = hMap.get(DcMotor.class, "intakeR");
-        winch = hMap.get(DcMotor.class, "winch");S
+        winch = hMap.get(DcMotor.class, "winch");
         gyro = hMap.get(BNO055IMU.class, "gyro");
 
     }
