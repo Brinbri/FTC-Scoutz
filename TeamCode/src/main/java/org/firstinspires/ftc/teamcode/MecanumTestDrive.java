@@ -46,7 +46,7 @@ public class MecanumTestDrive extends OpMode
 
     @Override
     public void init() {
-        robot = new SCOUTZ(hardwareMap);
+        robot = new SCOUTZ(hardwareMap, telemetry);
     }
 
     @Override
@@ -60,21 +60,21 @@ public class MecanumTestDrive extends OpMode
 
     @Override
     public void loop() {
-        float gamepad1LeftY = -gamepad1.left_stick_y;
-        float gamepad1LeftX = gamepad1.left_stick_x;
+        float gamepad1LeftY = -gamepad1.left_stick_x;
+        float gamepad1LeftX = gamepad1.left_stick_y;
         float gamepad1RightX = gamepad1.right_stick_x;
-        robot.drivetrain.drive(gamepad1LeftY, gamepad1LeftX,gamepad1RightX);
-
+        boolean holdHeading = gamepad1.left_bumper;
+        robot.drivetrain.drive(gamepad1LeftY, gamepad1LeftX, gamepad1RightX, holdHeading);
 
         if(gamepad2.b){
-            robot.elevator.runIntake(10);
+            robot.elevator.runIntake(0);
         }
         else{
             robot.elevator.runIntake(0);
         }
 
         if (gamepad2.a){
-            robot.elevator.runIntake(-10);
+            robot.elevator.runIntake(0);
         }
         else{
             robot.elevator.runIntake(0);
@@ -84,7 +84,7 @@ public class MecanumTestDrive extends OpMode
             robot.elevator.runWinch(5);
         }
         else{
-            robot.elevator.runWinch(-5);
+            robot.elevator.runWinch(0);
         }
     }
 
